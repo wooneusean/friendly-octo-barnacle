@@ -1,5 +1,5 @@
 import cv2 as cv
-from rescale import rescaleFrame
+from utils import rescaleFrame
 
 img = cv.imread('photos/cat.jpg')
 img = rescaleFrame(img)
