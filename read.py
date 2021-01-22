@@ -7,5 +7,4 @@ img = rescaleFrame(img)
 
 cv.imshow('Cat', img)
 
-
 cv.waitKey(0)
