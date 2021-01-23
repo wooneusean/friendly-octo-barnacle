@@ -1,6 +1,6 @@
 import cv2 as cv
 
-img = cv.imread('photos/cat.jpg')
+img = cv.imread('photos/mahjong.jpg')
 
 # BGR to Grayscale
 # gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
@@ -22,6 +22,5 @@ hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
 bgr = cv.cvtColor(hsv, cv.COLOR_HSV2BGR)
 cv.imshow('BGR', bgr)
 
-# https://youtu.be/oXlwWbU8l2o?t=4902
 
 cv.waitKey(0)
