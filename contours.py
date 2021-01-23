@@ -1,11 +1,13 @@
+from utils import rescaleFrame
 import cv2 as cv
 import numpy as np
 
-img = cv.imread('photos/mahjong.jpg')
+img = cv.imread('photos/mahjong1.png')
+rescaled = rescaleFrame(img)
 
-gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+gray = cv.cvtColor(rescaled, cv.COLOR_BGR2GRAY)
 
-blank = np.zeros(img.shape, dtype='uint8')
+blank = np.zeros(rescaled.shape, dtype='uint8')
 
 blurred = cv.GaussianBlur(gray, (5, 5), cv.BORDER_DEFAULT)
 
