@@ -1,13 +1,13 @@
 import cv2 as cv
 import numpy as np
 from mss import mss
-from utils import rescaleFrame
+from utils import rescale_frame
 
 mon = {'top': 0, 'left': 0, 'width': 1920, 'height': 1080}
 with mss() as sct:
     while True:
         img = np.array(sct.grab(mon))
-        resized = rescaleFrame(img)
+        resized = rescale_frame(img)
 
         cv.imshow('Image', resized)
 

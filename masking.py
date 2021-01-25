@@ -1,9 +1,9 @@
 import cv2 as cv
 import numpy as np
-from utils import rescaleFrame
+from utils import rescale_frame
 
 img = cv.imread('photos/mahjong.png')
-rescaled = rescaleFrame(img)
+rescaled = rescale_frame(img)
 
 blank = np.zeros(rescaled.shape[:2], dtype='uint8')
 

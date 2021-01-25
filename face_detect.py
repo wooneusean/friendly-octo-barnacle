@@ -1,9 +1,9 @@
 import cv2 as cv
 import numpy as np
-from utils import rescaleFrame
+from utils import rescale_frame
 
 img = cv.imread('photos/people2.jpg')
-rescaled = rescaleFrame(img, 0.5)
+rescaled = rescale_frame(img, 0.5)
 sample = rescaled
 
 gray = cv.cvtColor(sample, cv.COLOR_BGR2GRAY)

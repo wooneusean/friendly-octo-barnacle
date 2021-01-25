@@ -1,9 +1,9 @@
 import cv2 as cv
-from utils import rescaleFrame
+from utils import rescale_frame
 import numpy as np
 
 img = cv.imread('photos/mahjong.png')
-rescaled = rescaleFrame(img)
+rescaled = rescale_frame(img)
 cv.imshow('Mahjong', rescaled)
 
 b, g, r = cv.split(rescaled)

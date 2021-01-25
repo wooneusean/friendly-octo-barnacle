@@ -1,20 +1,20 @@
 import cv2 as cv
 import numpy as np
-from utils import rescaleCenter, getCenter
+from utils import rescale_center, get_center
 
 # blank = np.zeros((500, 500), dtype='uint8')
 # cv.imshow('Blank', blank)
 
 img = cv.imread('photos/cat.jpg')
 
-x1, y1, x2, y2 = rescaleCenter(img.shape[1], img.shape[0])
+x1, y1, x2, y2 = rescale_center(img.shape[1], img.shape[0])
 
 cv.rectangle(img, (x1, y1), (x2, y2), (255, 0, 0),
              thickness=2, lineType=cv.LINE_AA)
 # cv.imshow('Rectangle', img)
 
-centerPoint = getCenter(img.shape[1],
-                        img.shape[0])
+centerPoint = get_center(img.shape[1],
+                         img.shape[0])
 
 cv.circle(img, centerPoint, 100, (0, 255, 0), thickness=2, lineType=cv.LINE_AA)
 # cv.imshow('Circle', img)

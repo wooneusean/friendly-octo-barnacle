@@ -1,9 +1,9 @@
-from utils import rescaleFrame
+from utils import rescale_frame
 import cv2 as cv
 import numpy as np
 
 img = cv.imread('photos/mahjong1.png')
-rescaled = rescaleFrame(img)
+rescaled = rescale_frame(img)
 
 gray = cv.cvtColor(rescaled, cv.COLOR_BGR2GRAY)
 
