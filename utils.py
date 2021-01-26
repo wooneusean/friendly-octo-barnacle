@@ -25,10 +25,8 @@ def rescale_frame(frame, scale=0.75):
 
 
 def points_are_close(pt1, pt2, max_deviation):
-    x = np.sqrt(np.power((pt1[0] - pt2[0]), 2) +
-                np.power((pt1[1] - pt2[1]), 2))
-
-    if (x > max_deviation):
+    dist = np.sqrt(((pt1[0]-pt2[0])**2)+((pt1[1]-pt2[1])**2))
+    if (dist > max_deviation):
         return False
     else:
         return True

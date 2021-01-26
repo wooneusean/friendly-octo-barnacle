@@ -2,6 +2,7 @@ from mss import mss
 import cv2 as cv
 import numpy as np
 import os
+import scipy.spatial.distance as sd
 from utils import rescale_frame, points_are_close, named_rectangle
 
 # Template match single but loop
@@ -54,15 +55,18 @@ with mss() as sct:
                 sample, template_imgs[tile_name], cv.TM_CCOEFF_NORMED)
             threshold = 0.9
             loc = np.where(res >= threshold)
-            prev_pt = []
+            prev_pt = ()
             for pt in zip(*loc[::-1]):
-                if prev_pt:
-                    if not points_are_close(pt, prev_pt, w-5):
-                        named_rectangle(rescaled_screen,
-                                        tile_name, pt, (w, h))
-                else:
-                    named_rectangle(rescaled_screen,
-                                    tile_name, pt, (w, h))
+                # if prev_pt:
+                #     if not points_are_close(prev_pt, pt, w):
+                #         print(tile_name)
+                #         named_rectangle(rescaled_screen,
+                #                         tile_name, pt, (w, h))
+                # else:
+                #     named_rectangle(rescaled_screen,
+                #                     tile_name, pt, (w, h))
+                named_rectangle(rescaled_screen,
+                                tile_name, pt, (w, h))
                 prev_pt = pt
 
         cv.imshow(window_name, rescaled_screen)
